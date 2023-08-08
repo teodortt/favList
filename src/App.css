@@ -1,0 +1,102 @@
+.favoritesForm {
+  width: 400px;
+  display: flex;
+  gap: 15px;
+  margin: 10px;
+}
+
+.table {
+  width: 600px;
+  height: 1000px;
+  background: linear-gradient(
+    109.5deg,
+    rgb(13, 11, 106) 9.4%,
+    rgb(37, 169, 83) 89.4%
+  );
+  padding: 10px;
+  border-radius: 10px;
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+td {
+  word-wrap: break-word;
+  height: 45px;
+}
+
+.position {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.addFavorite {
+  cursor: pointer;
+  background: rgb(117, 131, 117);
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.welcomeText {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 580px;
+  height: 120px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s all;
+}
+
+.welcomeText:hover {
+  background: rgb(81, 72, 72);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
