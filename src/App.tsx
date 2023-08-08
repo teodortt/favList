@@ -71,7 +71,7 @@ function App() {
 
   return (
     <div>
-      <div className='welcomeText' onClick={showModal}>
+      <div className='mainInfo' onClick={showModal}>
         {!storageName ? (
           <span>
             Hello, click here and set your username to can add favorites

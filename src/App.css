@@ -45,10 +45,11 @@ td {
   background: rgb(24, 59, 22);
 }
 
-.welcomeText {
+.mainInfo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-weight: 600;
   gap: 5px;
   padding: 10px;
   margin-bottom: 20px;
@@ -59,7 +60,7 @@ td {
   transition: 0.5s all;
 }
 
-.welcomeText:hover {
+.mainInfo:hover {
   background: rgb(81, 72, 72);
 }
 
