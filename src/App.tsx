@@ -80,15 +80,15 @@ function App() {
           <span>Hello {storageName}</span>
         )}
         {storageName && storageFavPlayer && (
-          <p>your favorite player is {storageFavPlayer}</p>
+          <p>- favorite player: {storageFavPlayer}</p>
         )}
         {storageName && storageFavTeam && (
-          <p>your favorite team is {storageFavTeam}</p>
+          <p>- favorite team: {storageFavTeam}</p>
         )}
       </div>
       <div style={{ display: 'flex', gap: 50 }}>
         <div>
-          Top NBA players
+          <h2>Top NBA players</h2>
           <table
             className='table'
             onMouseEnter={() => storageName && setIsHoveredPlayer(true)}
@@ -113,19 +113,30 @@ function App() {
                     {!isHoveredPlayer ? (
                       <span className='position'>{item.position}</span>
                     ) : (
-                      <span
-                        className='addFavorite'
-                        onClick={() =>
-                          !storageFavPlayer
-                            ? handleFavorite(
+                      <>
+                        {!storageFavPlayer && (
+                          <span
+                            className='favoriteBtn'
+                            onClick={() =>
+                              handleFavorite(
                                 'favoritePlayer',
                                 item.first_name + item.last_name
                               )
-                            : handleFavorite('favoritePlayer', '')
-                        }
-                      >
-                        {!storageFavPlayer ? 'Add to favorites' : 'Remove'}
-                      </span>
+                            }
+                          >
+                            Add favorite
+                          </span>
+                        )}
+                        {storageFavPlayer ===
+                          item.first_name + item.last_name && (
+                          <span
+                            className='favoriteBtn'
+                            onClick={() => handleFavorite('favoritePlayer', '')}
+                          >
+                            Remove favorite
+                          </span>
+                        )}
+                      </>
                     )}
                   </td>
                   <td>{item.team.full_name}</td>
@@ -136,7 +147,7 @@ function App() {
         </div>
 
         <div>
-          Top NBA teams
+          <h2>Top NBA teams</h2>
           <table
             className='table'
             onMouseEnter={() => storageName && setIsHoveredTeam(true)}
@@ -159,16 +170,26 @@ function App() {
                     {!isHoveredTeam ? (
                       <span className='position'>{item.conference}</span>
                     ) : (
-                      <span
-                        className='addFavorite'
-                        onClick={() =>
-                          !storageFavTeam
-                            ? handleFavorite('favoriteTeam', item.full_name)
-                            : handleFavorite('favoriteTeam', '')
-                        }
-                      >
-                        {!storageFavTeam ? 'Add to favorites' : 'Remove'}
-                      </span>
+                      <>
+                        {!storageFavTeam && (
+                          <span
+                            className='favoriteBtn'
+                            onClick={() =>
+                              handleFavorite('favoriteTeam', item.full_name)
+                            }
+                          >
+                            Add favorite
+                          </span>
+                        )}
+                        {storageFavTeam === item.full_name && (
+                          <span
+                            className='favoriteBtn'
+                            onClick={() => handleFavorite('favoriteTeam', '')}
+                          >
+                            Remove favorite
+                          </span>
+                        )}
+                      </>
                     )}
                   </td>
                   <td>{item.division}</td>
