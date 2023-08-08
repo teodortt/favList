@@ -9,8 +9,8 @@ function App() {
 
   const initialUserData = {
     username: storageName || '',
-    favoritePlayer: localStorage.getItem('favoritePlayer') || '',
-    favoriteTeam: localStorage.getItem('favoriteTeam') || '',
+    favoritePlayer: storageFavPlayer || '',
+    favoriteTeam: storageFavTeam || '',
   };
 
   const [data, setData] = useState<any>();
