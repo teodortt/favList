@@ -120,7 +120,7 @@ function App() {
                             onClick={() =>
                               handleFavorite(
                                 'favoritePlayer',
-                                item.first_name + item.last_name
+                                `${item.first_name} ${item.last_name}`
                               )
                             }
                           >
@@ -128,7 +128,7 @@ function App() {
                           </span>
                         )}
                         {storageFavPlayer ===
-                          item.first_name + item.last_name && (
+                          `${item.first_name} ${item.last_name}` && (
                           <span
                             className='favoriteBtn'
                             onClick={() => handleFavorite('favoritePlayer', '')}
